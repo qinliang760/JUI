@@ -1,6 +1,7 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var TimeLineLightBox = require('../ui/slider');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import TimeLineLightBox from './ui/slider';
+
 
 //TimeLineBox
 //
@@ -17,8 +18,5 @@ var lightBoxData=[
 				"large":"http://hearthstone.nos.netease.com/1/sls/shandong/juesai/small/观众互动.JPG"
 			}
 		];
-		console.log(slider);
-		ReactDOM.render(
-		  <TimeLineLightBox list={lightBoxData} />,
-		  document.getElementById('slider')
-		);
+
+		ReactDOM.render(<TimeLineLightBox list={lightBoxData} />,document.getElementById('slider'));

@@ -1,18 +1,22 @@
-var React = require('react');
+import React,{Component} from 'react';
 var TimeLineLightBoxBar = require('./part1');
 var TimeLineLightBoxImg = require('./part2');
 var TimeLineLightBoxList = require('./part3');
 var TimeLineLightBoxBtn = require('./part4');
 
 //TimeLineBox
-var TimeLineLightBox=React.createClass({
-	getInitialState:function(){
-		return {num:1}
-	},		
-	onChildChanged:function(v){
+export default class TimeLineLightBox extends Component{
+	constructor(){
+		super();
+		this.state={
+			num:1
+		}
+	}	
+	onChildChanged=(v)=>{
 		this.setState({num:v});
-	},
-	render:function(){
+	}	
+
+	render(){
 
 		var style={
 			bar:{
@@ -21,7 +25,7 @@ var TimeLineLightBox=React.createClass({
 		}
 		return (
 			<div>
-			<span style={style.bar}>1111</span>
+			<span style={style.bar}>22112</span>			
 			<TimeLineLightBoxBar list={this.props.list} num={this.state.num}/>
 			<TimeLineLightBoxImg list={this.props.list} num={this.state.num}/>
 			<TimeLineLightBoxList list={this.props.list} num={this.state.num} callbackParent={this.onChildChanged}/>
@@ -29,7 +33,4 @@ var TimeLineLightBox=React.createClass({
 			</div>
 		);	
 	}
-})
-
-
-module.exports = TimeLineLightBox;
+}
